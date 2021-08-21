@@ -1,0 +1,96 @@
+body {
+  font-family: "Titillium Web", sans-serif;
+  box-sizing: border-box;
+  margin: auto;
+  width: 70%;
+  padding: 30px 0 30px 0;
+  background-color: rgba(205, 199, 241, 0.3);
+}
+.heading {
+  font-weight: 700;
+}
+.subheading {
+  font-weight: 300;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card {
+  border-radius: 10px 10px;
+  border: 1px solid slateblue;
+  border-radius: 0.7;
+  height: auto;
+  margin: 20px;
+}
+
+.card__description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.feed {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+@media (min-width: 320px), (min-width: 480px) {
+  .feed {
+    grid-template-columns: auto;
+  }
+  .card {
+    width: auto;
+  }
+  .control-panel {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 600px), (min-width: 801px), (min-width: 1025px) {
+  .feed {
+    grid-template-columns: auto auto;
+  }
+  .control-panel {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1281px) {
+  .feed {
+    grid-template-columns: auto auto auto;
+  }
+  .control-panel {
+    justify-content: space-between;
+  }
+}
+
+.control-panel {
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+select {
+  height: 54px;
+  font-family: "Titillium Web", sans-serif;
+  width: 265px;
+  font-size: 1.4rem;
+  padding: 5px;
+  border-radius: 5px 5px;
+  border: 1px solid slateblue;
+}
+
+input {
+  height: 40px;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1.4rem;
+  width: 250px;
+  padding: 5px;
+  border-radius: 5px 5px;
+  border: 1px solid slateblue;
+}

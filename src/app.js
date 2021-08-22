@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Router, Link } from "@reach/router";
-import { Feed } from "./Feed";
+import { Router } from "@reach/router";
+import { Feed } from "./container/Feed";
 
 const App = () => {
   return (

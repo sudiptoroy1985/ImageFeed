@@ -49,6 +49,9 @@ img {
   .control-panel {
     justify-content: center;
   }
+  .tabular {
+    display: none;
+  }
 }
 
 @media (min-width: 600px), (min-width: 801px), (min-width: 1025px) {
@@ -58,6 +61,9 @@ img {
   .control-panel {
     justify-content: space-between;
   }
+  .tabular {
+    display: block;
+  }
 }
 
 @media (min-width: 1281px) {
@@ -66,6 +72,9 @@ img {
   }
   .control-panel {
     justify-content: space-between;
+  }
+  .tabular {
+    display: block;
   }
 }
 
@@ -93,4 +102,22 @@ input {
   padding: 5px;
   border-radius: 5px 5px;
   border: 1px solid slateblue;
+}
+
+.tabular {
+  margin-top: 10px;
+  padding: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid slateblue;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+th {
+  background-color: slateblue;
+  height: 20px;
 }

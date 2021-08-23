@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { mockData } from "../data";
 import { Content } from "../components/content";
 import { Tabular } from "../tabular";
@@ -10,9 +10,9 @@ export const Feed = () => {
   const [data] = useState(mockData);
 
   return (
-    <Fragment>
+    <div className="container">
       <ContentWithControl data={data} />
       <Tabular data={data} />
-    </Fragment>
+    </div>
   );
 };

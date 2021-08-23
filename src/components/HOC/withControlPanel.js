@@ -1,21 +1,36 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
+import getSearchFn from "./searchFn";
 
 const WithControlPanel = Component => {
-  const wrappedComponentWithControl = ({ data }) => {
+  const WrappedComponentWithControl = ({ data }) => {
+    const [filteredFeed, setFilteredFeed] = useState(undefined);
+
+    const searchFeed = e => {
+      const searchTerm = e.target.value;
+      if (searchTerm.length) {
+        const searchTerm = e.target.value;
+        const searchFn = getSearchFn(searchTerm);
+        const filteredFeed = searchFn(data);
+        setFilteredFeed(filteredFeed);
+      } else {
+        setFilteredFeed(undefined);
+      }
+    };
+
     return (
       <Fragment>
         <div className="control__panel">
-          <input placeholder="Search" />
+          <input placeholder="Search" onChange={searchFeed} />
           <select>
             <option value="title">Title</option>
             <option value="dateLastEdited">Last edited</option>
           </select>
         </div>
-        <Component data={data} />
+        <Component data={filteredFeed || data} />
       </Fragment>
     );
   };
-  return wrappedComponentWithControl;
+  return WrappedComponentWithControl;
 };
 
 export default WithControlPanel;

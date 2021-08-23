@@ -46,7 +46,7 @@ img {
   .card {
     width: auto;
   }
-  .control-panel {
+  .control__panel {
     justify-content: center;
   }
   .tabular {
@@ -58,7 +58,7 @@ img {
   .feed {
     grid-template-columns: auto auto;
   }
-  .control-panel {
+  .control__panel {
     justify-content: space-between;
   }
   .tabular {
@@ -70,7 +70,7 @@ img {
   .feed {
     grid-template-columns: auto auto auto;
   }
-  .control-panel {
+  .control__panel {
     justify-content: space-between;
   }
   .tabular {
@@ -78,7 +78,7 @@ img {
   }
 }
 
-.control-panel {
+.control__panel {
   padding: 10px 20px 10px 20px;
   display: flex;
   flex-wrap: wrap;

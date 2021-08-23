@@ -4,7 +4,7 @@ const WithControlPanel = Component => {
   const wrappedComponentWithControl = ({ data }) => {
     return (
       <Fragment>
-        <div className="control-panel">
+        <div className="control__panel">
           <input placeholder="Search" />
           <select>
             <option value="title">Title</option>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { mockData } from "../data";
 import { Content } from "../components/content";
-import { Tabular } from "../tabular";
+import { Tabular } from "../components/tabular";
 import WithControlPanel from "../components/HOC/withControlPanel";
 
-const ContentWithControl = WithControlPanel(Content);
+const ContentWithControl = WithControlPanel(Content, Tabular);
 
 export const Feed = () => {
   const [data] = useState(mockData);
@@ -12,7 +12,6 @@ export const Feed = () => {
   return (
     <div className="container">
       <ContentWithControl data={data} />
-      <Tabular data={data} />
     </div>
   );
 };

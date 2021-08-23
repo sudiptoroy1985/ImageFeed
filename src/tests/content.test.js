@@ -4,7 +4,7 @@ import Adapter from "enzyme-adapter-react-16";
 import { shallow, configure, mount } from "enzyme";
 
 configure({ adapter: new Adapter() });
-const shallowRenderContent = () => shallow(<Content />);
+const shallowRenderContent = (data) => shallow(<Content data={data}/>);
 const mountContent = data => mount(<Content data={data} />);
 const mock = [
   {
@@ -26,7 +26,7 @@ const mock = [
 afterEach(() => {});
 
 test("initial Content is rendered as expected", () => {
-  const content = shallowRenderContent();
+  const content = shallowRenderContent([]);
   expect(content).toBeTruthy();
 });
 
@@ -42,4 +42,9 @@ test("cards to be rendered under content when data is available", () => {
   const feed = content.find(".feed");
   const cards = feed.children();
   expect(cards.length).toBe(2);
+});
+
+test("No records data renders with empty dataset", () => {
+  const content = shallowRenderContent([]);
+  expect(content.find(".no__records").length).toBe(1);
 });

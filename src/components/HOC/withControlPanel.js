@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import getSearchFn from "./searchFn";
 
-const WithControlPanel = Component => {
+const WithControlPanel = (Component1, Component2) => {
   const WrappedComponentWithControl = ({ data }) => {
     const [filteredFeed, setFilteredFeed] = useState(undefined);
 
@@ -26,7 +26,8 @@ const WithControlPanel = Component => {
             <option value="dateLastEdited">Last edited</option>
           </select>
         </div>
-        <Component data={filteredFeed || data} />
+        <Component1 data={filteredFeed || data} />
+        <Component2 data={filteredFeed || data} />
       </Fragment>
     );
   };

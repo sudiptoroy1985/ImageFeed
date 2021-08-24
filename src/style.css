@@ -2,8 +2,8 @@ body {
   font-family: "Titillium Web", sans-serif;
   box-sizing: border-box;
   margin: auto;
-  padding: 30px 0 30px 0;
 }
+
 .heading {
   font-weight: 700;
 }
@@ -19,6 +19,7 @@ body {
 .container {
   width: 60vw;
   margin: 0 auto;
+  text-align: center;
 }
 
 img {
@@ -31,7 +32,6 @@ img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 0.7;
   height: auto;
-  width: 250px;
 }
 
 .card__description {
@@ -54,7 +54,7 @@ img {
 
 @media (min-width: 320px), (min-width: 480px) {
   .feed {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
   }
   .card {
     width: 230px;
@@ -71,14 +71,19 @@ img {
 
 @media (min-width: 600px), (min-width: 801px), (min-width: 1025px) {
   .feed {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
-  .control__panel {
+  /* .control__panel {
     justify-content: space-between;
     padding: 10px 20px 10px 20px;
-  }
+  } */
   .tabular {
     display: block;
+    padding: 0 80px 0 80px;
+  }
+
+  .container {
+    width: 74vw;
   }
 
   .card {
@@ -88,7 +93,7 @@ img {
 
 @media (min-width: 1281px) {
   .feed {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .control__panel {
     justify-content: space-between;
@@ -96,10 +101,7 @@ img {
   }
   .tabular {
     display: block;
-  }
-
-  .card {
-    /* margin: 52px; */
+    padding: 0 106px 0 106px;
   }
 }
 
@@ -130,7 +132,6 @@ input:focus {
 
 .tabular {
   margin-top: 10px;
-  padding: 0 60px 0 60px;
 }
 
 table,

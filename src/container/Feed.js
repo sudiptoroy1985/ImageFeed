@@ -7,11 +7,11 @@ import WithControlPanel from "../components/HOC/withControlPanel";
 const ContentWithControl = WithControlPanel(Content, Tabular);
 
 export const Feed = () => {
-  const [data] = useState(mockData);
+  const [feed] = useState(mockData);
 
   return (
     <div className="container">
-      <ContentWithControl data={data} />
+      <ContentWithControl feed={feed} />
     </div>
   );
 };

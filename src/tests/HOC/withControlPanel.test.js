@@ -14,7 +14,7 @@ test("initial HOC is rendered with control panel", () => {
   const controlPanel = wrappedComponent.find(".control__panel");
   const controls = controlPanel.children();
   expect(controls.length).toBe(2);
-  expect(controls.children().length).toBe(2);
+  expect(controls.children().length).toBe(3);
 });
 
 test("initial HOC is rendered with passed Component", () => {

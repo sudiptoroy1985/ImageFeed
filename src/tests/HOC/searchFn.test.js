@@ -30,8 +30,20 @@ test("it should return correct filterd data for exact match", () => {
   expect(filtered.length).toBe(1);
 });
 
+test("it should return correct filterd data for exact match case insensitive", () => {
+  const searchFn = getSearchFn("'regional configuration Designer'");
+  const filtered = searchFn(mock);
+  expect(filtered.length).toBe(1);
+});
+
 test("it should return correct filterd data for match", () => {
-    const searchFn = getSearchFn("Regional Designer");
-    const filtered = searchFn(mock);
-    expect(filtered.length).toBe(1);
-  });
+  const searchFn = getSearchFn("Regional Designer");
+  const filtered = searchFn(mock);
+  expect(filtered.length).toBe(1);
+});
+
+test("it should return correct filterd data for match case insensitive", () => {
+  const searchFn = getSearchFn("regional");
+  const filtered = searchFn(mock);
+  expect(filtered.length).toBe(1);
+});

@@ -8,8 +8,12 @@ const getSearchFn = searchTerm => {
       return data.filter(item => {
         const exactSearchTerm = searchTerm.replace(/['"]+/g, "");
         if (
-          (item.name && item.name.includes(exactSearchTerm)) ||
-          (item.description && item.description.includes(exactSearchTerm))
+          (item.name &&
+            item.name.toLowerCase().includes(exactSearchTerm.toLowerCase())) ||
+          (item.description &&
+            item.description
+              .toLowerCase()
+              .includes(exactSearchTerm.toLowerCase()))
         ) {
           return item;
         }
@@ -18,13 +22,17 @@ const getSearchFn = searchTerm => {
     return exactSearch;
   } else {
     const search = data => {
-      const [...searchTerms] = searchTerm.split(" ");
+      const [...searchTerms] = searchTerm.toLowerCase().split(" ");
       return data.filter(item => {
         if (
           (item.name &&
-            [...item.name.split(" ")].some(p => searchTerms.includes(p))) ||
+            [...item.name.toLowerCase().split(" ")].some(p =>
+              searchTerms.includes(p)
+            )) ||
           (item.description &&
-            [...item.description.split(" ")].some(p => searchTerms.includes(p)))
+            [...item.description.toLowerCase().split(" ")].some(p =>
+              searchTerms.includes(p)
+            ))
         ) {
           return item;
         }
